@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+    --background: 0.97 0.01 80;
+    --foreground: 0.2 0 0;
+    --card: 1 0 0;
+    --card-foreground: 0.2 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.2 0 0;
+    --primary: 0.72 0.12 295;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.88 0.08 350;
+    --secondary-foreground: 0.25 0.05 295;
+    --muted: 0.94 0.02 80;
+    --muted-foreground: 0.55 0 0;
+    --accent: 0.88 0.06 220;
+    --accent-foreground: 0.25 0.04 220;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.9 0.02 295;
+    --input: 0.93 0.02 295;
+    --ring: 0.72 0.12 295;
+    --chart-1: 0.72 0.12 295;
+    --chart-2: 0.88 0.08 350;
+    --chart-3: 0.88 0.06 220;
+    --chart-4: 0.82 0.1 80;
+    --chart-5: 0.78 0.1 150;
+    --sidebar: 0.97 0.01 80;
+    --sidebar-foreground: 0.2 0 0;
+    --sidebar-primary: 0.72 0.12 295;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.94 0.02 80;
+    --sidebar-accent-foreground: 0.2 0 0;
+    --sidebar-border: 0.9 0.02 295;
+    --sidebar-ring: 0.72 0.12 295;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .aura-card {
+    @apply bg-card rounded-2xl shadow-sm;
+  }
+
+  .aura-pill {
+    @apply rounded-full px-3 py-1 text-xs font-medium;
+  }
+
+  .tab-active {
+    color: oklch(var(--primary));
+  }
+
+  .tab-inactive {
+    color: oklch(var(--muted-foreground));
+  }
+
+  .mood-selected {
+    background: oklch(var(--primary));
+    color: white;
+  }
+
+  .mood-unselected {
+    background: oklch(var(--muted));
+    color: oklch(var(--muted-foreground));
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
